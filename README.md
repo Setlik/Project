@@ -17,18 +17,6 @@ git clone https://github.com/Setlik/Project.git
 ```
 pip install -r requirements.txt
 ```
-
-3. Создайте базу данных и выполните миграции:
-
-```
-python manage.py migrate
-```
-
-4. Запустите локальный сервер:
-
-```
-python manage.py runserver
-```
 ## Используемые технологии
 Используя возможности Python для обработки данных через генераторы мы в своем проекте используем генераторы для обработки массивов транзакций
 
