@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 def log(filename=None):
+    """декоратор для логирования начала и концф выполнения функции, а также ее результатов или возникшие ошибки."""
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
