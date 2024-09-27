@@ -51,7 +51,6 @@ def test_card_number_generator_empty_range():
 
 
 def test_card_number_generator():
-    # Проверяем диапазон от 1234567890123456 до 1234567890123459
     start_range = 1
     end_range = 5
 
