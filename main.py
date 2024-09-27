@@ -1,13 +1,6 @@
-import os
+import json
 
 
-from utils.add import add
-
-print(add(1, 2))
-
-base_path = os.path.dirname(__file__)
-full_path = os.path.join(base_path, 'data', "example.txt")
-
-with open(full_path, "r") as file:
-    print(file.read())
-
+with open("C:/Users/kroli/Desktop/home_work/venv/home_work/data/operations.json", encoding="utf-8") as f:
+    operations = json.load(f)
+print(operations)
