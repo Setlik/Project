@@ -1,6 +1,6 @@
 from file_reader import load_csv, load_json, load_xlsx
 from masks import get_mask_account, get_mask_card_number
-from transaction_processor import filter_transactions_by_description
+from transaction_processor import filter_transactions_by_description, count_transactions_by_category
 
 
 def main():
@@ -62,11 +62,13 @@ def main():
         search_string = input("Введите слово для поиска: ")
         filtered_transactions = filter_transactions_by_description(filtered_transactions, search_string)
 
+    description_counts = count_transactions_by_category(filtered_transactions)
     if not filtered_transactions:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации.")
     else:
         print("Распечатываю итоговый список транзакций...")
         print(f"Всего банковских операций в выборке: {len(filtered_transactions)}")
+        print(f"Подсчет транзакций по описанию: {description_counts}")
         for tx in filtered_transactions:
             masked_from = get_mask_account(tx.get("from", ""))
             masked_to = get_mask_account(tx.get("to", ""))
