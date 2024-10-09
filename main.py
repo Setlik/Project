@@ -1,6 +1,12 @@
+import os
+
 from file_reader import load_csv, load_json, load_xlsx
 from masks import get_mask_account, get_mask_card_number
 from transaction_processor import filter_transactions_by_description, count_transactions_by_category
+
+json_path = os.path.join('data', 'operations.json')
+csv_path = os.path.join('data', 'transactions.csv')
+XLSX_path = os.path.join('data', 'transactions_excel.xlsx')
 
 
 def main():
@@ -12,11 +18,11 @@ def main():
 
     choice = input("Пользователь: ")
     if choice == "1":
-        transactions = load_json("C:/Users/kroli/Desktop/home_work/venv/home_work/data/operations.json")
+        transactions = load_json(json_path)
     elif choice == "2":
-        transactions = load_csv("C:/Users/kroli/Desktop/home_work/venv/home_work/data/transactions.csv")
+        transactions = load_csv(csv_path)
     elif choice == "3":
-        transactions = load_xlsx("C:/Users/kroli/Desktop/home_work/venv/home_work/data/transactions_excel.xlsx")
+        transactions = load_xlsx(XLSX_path)
     else:
         print("Неверный выбор. Завершение программы.")
         return
