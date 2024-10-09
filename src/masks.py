@@ -1,11 +1,11 @@
 import logging
+import os.path
 import re
 
-import requests
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    filename='C:/Users/kroli/Desktop/home_work/venv/home_work/logs/masks.log',
+                    filename='../logs/masks.log',
                     filemode='w')
 logger = logging.getLogger()
 
@@ -43,3 +43,6 @@ def get_mask_account(account_number: str) -> str:
         return account_number
     mask_account = "**" + account_number[-4:]
     return mask_account
+
+
+print(get_mask_card_number('visa 1234 4322 4444 7777'))
