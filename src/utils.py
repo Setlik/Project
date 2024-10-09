@@ -28,7 +28,7 @@ file_path = os.getenv("file_path")
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    filename='C:/Users/kroli/Desktop/home_work/venv/home_work/logs/utils.log',
+                    filename='../logs/utils.log',
                     filemode='w')
 logger = logging.getLogger()
 
